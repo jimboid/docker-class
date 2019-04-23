@@ -43,7 +43,7 @@ To list our containers we run the following::
 
 and you should see something like this
 
-..image images/docker2.png
+.. image:: images/docker2.png
 
 The information here is quite detailed. You can see the **container id** unique to each instance, the **image** tells you which container images it is deployed from. The **status** column give the container run status, in this case it will print the hello message and exit, but other services and servers may run without exiting. **ports** will tell you which physical ports on your machines you have mapped to a container port. **NAMES** gives you the friendly name generated for your container instance, either set explicitly by you or if not, randomly generated.
 
@@ -62,7 +62,7 @@ What does **docker ps -a** show now?
 
 It should look something like this:
 
-..image /images/docker3.png
+.. image:: /images/docker3.png
 
 We now have two separate instances of the hello-world container each with different container id and different names. Docker has not reused the first container to generate the second, but it did reuse the same hello-world images to generate a new instance of the hello-world container. If we wanted to reuse a container, then we use a different command.
 
