@@ -70,6 +70,9 @@ Now copy and paste the following template into your Dockerfile:
 
     # Add all of the notebook files to the home directory.
     ADD --chown=jovyan:100 *.ipynb $HOME/
+
+    # If your notebook has a data directory or files then copy these too
+    # (modify this to match your case).
     ADD --chown=jovyan:100 data $HOME/data
 
     # Always finish with non-root user as a precaution.
@@ -89,3 +92,7 @@ Thats it! You have just deployed a fully cloud deployable multi-user Jupyter not
 
 But you could use it to have a fully isolated Jupyter notebook environment that is reproducible on machines that you deploy to, and introduce a full CI/CD toolchain to validate your code.
 
+
+Previous_
+
+.. _previous: part1.rst
