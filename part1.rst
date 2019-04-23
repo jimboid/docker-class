@@ -70,10 +70,40 @@ To reuse a container we would use the following::
 
 % docker start --attach <container name>
 
-You should replace **<container name>** with the name listed in the names column for one of the containers from the list when listing your containers "docker ps -a". The "--attach" flag simply tells docker to connect to the containers output so we can see the results in our terminal.
+You should replace **<container name>** with the name listed in the names column for one of the containers from the list when listing your containers **docker ps -a**. The **--attach** flag simply tells docker to connect to the containers output so we can see the results in our terminal.
 
-You should have seen with the Docker start command that output was the same as before, this is because you have re-executed one of the hello-world containers already deployed on your system. If you run *docker ps -a* again you'll notice that you still only have the same 2 containers deployed.
+You should have seen with the Docker start command that output was the same as before, this is because you have re-executed one of the hello-world containers already deployed on your system. If you run **docker ps -a** again you'll notice that you still only have the same 2 containers deployed.
 
 
+Cheat Sheet
+===========
+
+Here are a selection of commands that are commonly useful when working with Docker. There are a lot more possibilities than those listed here, and more ways to use the ones listed here than are demonstrated. You should consult the Docker documentation for a full treatment of commands and their use.
+
++----------------------------------------------------------+----------------------------------------------------------+
+| Command                                                  | Description                                              | 
++==========================================================+==========================================================+
+| docker ps                                                | List all running containers.                             |
++----------------------------------------------------------+----------------------------------------------------------+
+| docker ps -a                                             | List all container instances, with their ID and status.  |
++----------------------------------------------------------+----------------------------------------------------------+
+| docker images                                            | List all images on the local machine.                    |
++----------------------------------------------------------+----------------------------------------------------------+
+| docker run -p <hostport>:<containerport> -d <user/image> | Runs image in detached mode with port forwarding.        |
++----------------------------------------------------------+----------------------------------------------------------+
+| docker run -it <user/image>                              | Runs image and changes into the terminal inside the      |
+|                                                          | container.                                               |
++----------------------------------------------------------+----------------------------------------------------------+
+| docker start <container name or id>                      | Start a container.                                       |
++----------------------------------------------------------+----------------------------------------------------------+
+| docker stop <container name or id>                       | Stop a container.                                        |
++----------------------------------------------------------+----------------------------------------------------------+
+| docker rm -f <container name or id>                      | Delete a container.                                      |
++----------------------------------------------------------+----------------------------------------------------------+
+| docker system prune -a                                   | Delete all unused images.                                |
++----------------------------------------------------------+----------------------------------------------------------+
+|docker build . -t user/image                              | Build container using Dockerfile in current working      |
+|                                                          | directory.                                               |
++----------------------------------------------------------+----------------------------------------------------------+
 
 
