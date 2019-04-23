@@ -28,7 +28,7 @@ You should see the following output in your terminal
 
 .. image:: images/docker1.png
 
-You should be able to see that Docker could not find the container on your local machine and thus decided to pull it from Docker Hub. 
+You should be able to see that Docker could not find the container on your local machine and thus decided to pull the **image** for it from Docker Hub. 
 
 The hello-world container simply displays a message that tells us that everything is working OK with your Docker installation, it spells out the steps it took to run it and a suggestion for further steps. But that is it, you have run your first docker container!
 
