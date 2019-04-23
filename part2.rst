@@ -95,4 +95,4 @@ But you could use it to have a fully isolated Jupyter notebook environment that 
 
 Previous_
 
-.. _previous: part1.rst
+.. _previous: part2.rst

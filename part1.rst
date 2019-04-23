@@ -16,6 +16,11 @@ For folks not wanting to use ubuntu then you will need to head over to the docke
 
 .. _here: https://docs.docker.com/install/
 
+It may also be handy to clone this repository so that you have all of the files locally accessible on your computer, change to a directory where you would want the files and run::
+
+% git clone https://github.com/jimboid/docker-class.git
+
+
 Running your first container
 ============================
 
@@ -73,6 +78,53 @@ To reuse a container we would use the following::
 You should replace **<container name>** with the name listed in the names column for one of the containers from the list when listing your containers **docker ps -a**. The **--attach** flag simply tells docker to connect to the containers output so we can see the results in our terminal.
 
 You should have seen with the Docker start command that output was the same as before, this is because you have re-executed one of the hello-world containers already deployed on your system. If you run **docker ps -a** again you'll notice that you still only have the same 2 containers deployed.
+
+Interacting with Containers
+===========================
+
+In the previous examples, our containers exited after echoing the hello world message. This didn't really present us much chance to interact with the containers much whilst they are running. We don't need to do anything overly complicated to demonstrate these principles so lets just pull an ubuntu container and enter bash::
+
+% docker run -it ubuntu bash
+
+Where the **-it** flags enable us to interact with the bash terminal inside the container. You can do all the basic linux bash commands here and they work (eg **ls -al**).
+
+Open up another terminal window alongside this one and type::
+
+% docker ps -a
+
+.. image:: /images/docker4.png
+
+You see something like the above, and you will notice that the container is now running and will display an up time for as long as you don't exit the containers terminal.
+
+If you want to see what processes are running inside a container, then you can query this by::
+
+% docker top <container name or id>
+
+.. image:: /images/docker5.png
+
+We are simply running a bash terminal as the root user, that this is the only thing that will show up here.
+
+We can stop containers simply by running::
+
+% docker stop <container name or id>
+
+So now running::
+
+% docker ps -a
+
+Should look like this. The containers are all stopped and the terminal that was using the containers internal bash terminal will have exited.
+
+.. image:: /images/docker6.png
+
+we can delete containers simply by doing::
+
+% docker rm <container name or id>
+
+or to delete all at once along with their images we can do::
+
+% docker system prune -a
+
+This will remove all of the container instances you have created along with the container images you downloaded to make them from, thus freeing up space.
 
 
 Cheat Sheet
